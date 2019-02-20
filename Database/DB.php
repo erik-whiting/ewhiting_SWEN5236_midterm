@@ -11,7 +11,7 @@ class DB
     public $servername = "localhost";
     public $username = "erik";
     public $db_name = "ewhiting_midterm";
-    public $password = "Eagle200";
+    public $password = "abc123";
 
     function getConnectionString() {
         return "mysql:host=$this->servername;dbname=$this->db_name";
