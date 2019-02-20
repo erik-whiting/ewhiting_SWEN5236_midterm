@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: eedee
- * Date: 2/19/2019
- * Time: 7:31 PM
- */
 
 class Genre
 {
