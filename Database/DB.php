@@ -13,14 +13,8 @@ class DB
     public $db_name = "ewhiting_midterm";
     public $password = "Eagle200";
 
-    function connect() {
-        try {
-            $conn = new PDO("mysql:host=$this->servername;dbname=$this->db_name", $this->username, $this->password);
-            return $conn;
-        } catch(PDOException $e)
-        {
-            return "Connection failed: " . $e->getMessage();
-        }
+    function getConnectionString() {
+        return "mysql:host=$this->servername;dbname=$this->db_name";
     }
 
 }
