@@ -15,7 +15,7 @@ class DB
 
     function connect() {
         try {
-            $conn = new PDO("mysql:host=$this->servername;dbname=$this->db_name", $this->username, getenv("DB_PASSWORD"));
+            $conn = new PDO("mysql:host=$this->servername;dbname=$this->db_name", $this->username, $this->password);
             return $conn;
         } catch(PDOException $e)
         {
