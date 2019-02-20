@@ -8,4 +8,6 @@ $stmt = $conn->prepare("SELECT * FROM Rating");
 $stmt->execute();
 
 $result = $stmt->fetchAll();
-echo $result;
+foreach ($result as $item) {
+    echo $result;
+}
