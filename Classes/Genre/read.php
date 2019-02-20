@@ -11,19 +11,19 @@ $stmt = $genre->read();
 $num = $stmt->rowCount();
 
 if($num>0) {
-    $genre_array = array();
-    $genre_array["records"]=array();
+    $results_array = array();
+    $results_array["records"]=array();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
-        $genre_item=array(
+        $result_item=array(
             "id" => $id,
             "name" => $name
         );
-        array_push($genre_array["records"], $genre_item);
+        array_push($results_array["records"], $result_item);
     }
     http_response_code(200);
-    echo json_encode($genre_array);
+    echo json_encode($results_array);
 } else {
     http_response_code(404);
-    echo json_encode(array("message" => "No genres found."));
+    echo json_encode(array("message" => "No records found."));
 }
