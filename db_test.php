@@ -7,7 +7,7 @@ $conn = new PDO($db->getConnectionString(), $db->username, $db->password);
 $stmt = $conn->prepare("SELECT * FROM Rating");
 $stmt->execute();
 
-$result = $stmt->fetchAll();
-foreach ($result as $item) {
-    print_r($result);
+$result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
+foreach ($stmt->fetchAll() as $k=>$v) {
+    print $v;
 }
