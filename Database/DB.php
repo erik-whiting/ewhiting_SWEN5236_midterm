@@ -9,7 +9,7 @@
 class DB
 {
     public $servername = "localhost";
-    public $username = "erik@localhost";
+    public $username = "erik";
     public $db_name = "ewhiting_midterm";
     public $password = "Eagle200";
 
