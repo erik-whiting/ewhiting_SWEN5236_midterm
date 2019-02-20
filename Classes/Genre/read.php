@@ -1,8 +1,5 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-
-include_once '../DB.php';
+include_once  '../header.php';
 include_once 'Genre.php';
 
 $database = new DB();
