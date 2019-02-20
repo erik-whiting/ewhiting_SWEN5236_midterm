@@ -9,5 +9,5 @@ $stmt->execute();
 
 $result = $stmt->fetchAll();
 foreach ($result as $item) {
-    echo $result;
+    print_r($result);
 }
