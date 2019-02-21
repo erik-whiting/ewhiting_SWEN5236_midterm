@@ -17,7 +17,8 @@ if($num>0) {
         extract($row);
         $result_item=array(
             "id" => $id,
-            "name" => $name
+            "name" => $name,
+            "picture_path" => $picture_path
         );
         array_push($results_array["records"], $result_item);
     }

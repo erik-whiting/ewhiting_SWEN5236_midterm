@@ -7,6 +7,7 @@ class Genre
 
     public $id;
     public $name;
+    public $picture_path;
 
     public function __construct($db)
     {
@@ -14,7 +15,8 @@ class Genre
     }
 
     function read() {
-        $query = "SELECT t.id AS id, t.name AS name FROM " . $this->table_name . " t ORDER BY t.name";
+        $query = "SELECT t.id AS id, t.name AS name, t.picture_path AS picture_path FROM "
+            . $this->table_name . " t ORDER BY t.name";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
 
