@@ -18,3 +18,13 @@ footer {
     background-color: #f2f2f2;
     padding: 25px;
 }
+
+ .img-responsive {
+     position: relative;
+     float: left;
+     width:  100px;
+     height: 300px;
+     background-position: 50% 50%;
+     background-repeat:   no-repeat;
+     background-size:     cover;
+ }
