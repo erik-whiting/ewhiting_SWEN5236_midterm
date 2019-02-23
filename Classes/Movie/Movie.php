@@ -38,7 +38,7 @@ class Movie
     }
 
     function full_data($id) {
-        $query = "SELECT m.name AS 'name', m.year_from AS 'from', m.year_to AS 'to', " .
+        $query = "SELECT m.id, m.name AS 'name', m.year_from AS 'from', m.year_to AS 'to', " .
            "m.description AS 'description', 
            CONCAT(d.first_name, \" \", d.last_name) AS \"director\", 
            m.gross AS 'gross'
@@ -50,22 +50,12 @@ class Movie
         return $stmt;
     }
 
-    function get_rating($id) {
-        $query = "SELECT AVG(rating_id) AS 'avg' FROM movie_rating WHERE movie_id = " . $id;
+    function get_vote_info($id) {
+        $query = "SELECT AVG(rating_id) AS 'avg', COUNT(rating_id) AS 'votes' 
+                  FROM movie_rating WHERE movie_id = " . $id;
         $stmt = $this->conn->prepare($query);
         $avg = $stmt->execute();
-        $row = $avg->fetch(PDO::FETCH_ASSOC);
-        $return = $row['avg'];
-        $return = number_format($return, 2);
-        return $return;
-    }
 
-    function get_votes($id) {
-        $query = "SELECT COUNT(rating_id) AS 'votes' FROM movie_rating WHERE movie_id = " . $id;
-        $stmt = $this->conn->prepare($query);
-        $votes = $stmt.execute();
-        $row = $votes->fetch(PDO::FETCH_ASSOC);
-        $return = $row['votes'];
-        return $return;
+        return $stmt;
     }
 }

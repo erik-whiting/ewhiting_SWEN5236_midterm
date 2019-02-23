@@ -10,17 +10,21 @@ $movie = new Movie($db);
 $stmt = $movie->full_data(1);
 $num = $stmt->rowcount();
 
+$rating = $movie->get_vote_info(1);
+$rnum = $rating->rowcount();
+
 if ($num>0) {
     $results_array = array();
     $results_array["movie"]=array();
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC) && $rating->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
+        extract($rating);
         $result_item = array(
             "id" => $id,
             "name" => $name,
             "from" => $from,
             "to" => $to,
-            "rating" => $rating,
+            "rating" => $avg,
             "description" => $description,
             "director" => $director,
             "votes" => $votes,
