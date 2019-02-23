@@ -5,6 +5,7 @@ include_once '../Movie/full_data.php';
 
 $database = new DB();
 $db = $database->getConnection();
+$movies;
 
 $genre = new Genre($db);
 
@@ -22,7 +23,7 @@ if ($num > 0) {
         array_push($results_array["movies"], $result_item);
     }
     http_response_code(200);
-    echo json_encode($results_array);
+    $movies = json_encode($results_array);
 } else {
     echo json_encode(array("message" => "Could not find requested data"));
 }
