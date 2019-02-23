@@ -16,9 +16,9 @@ $rnum = $rating->rowcount();
 if ($num>0) {
     $results_array = array();
     $results_array["movie"]=array();
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC) && $rating->fetch(PDO::FETCH_ASSOC)) {
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
-        extract($rating);
+        extract($rating->fetch(PDO::FETCH_ASSOC));
         $result_item = array(
             "id" => $id,
             "name" => $name,
