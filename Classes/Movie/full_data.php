@@ -26,7 +26,7 @@ if ($num > 0) {
             "votes" => $votes,
             "gross" => $gross
         );
-        array_push($results_array["movie"]);
+        array_push($results_array["movie"], $result_item);
     }
     http_response_code(200);
     echo json_encode($results_array);
