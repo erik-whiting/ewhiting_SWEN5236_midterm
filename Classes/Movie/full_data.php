@@ -19,12 +19,12 @@ if ($num > 0) {
             "id" => $id,
             "name" => $name,
             "year_from" => $from,
-            "to" => $to,
-            "rating" => $rating,
-            "director" => $director,
-            "description" => $description,
-            "votes" => $votes,
-            "gross" => $gross
+            "to" => $to
+//            "rating" => $rating,
+//            "description" => $description,
+//            "director" => $director,
+//            "votes" => $votes,
+//            "gross" => $gross
         );
         array_push($results_array["movie"], $result_item);
     }
