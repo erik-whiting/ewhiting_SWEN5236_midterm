@@ -18,13 +18,13 @@ if ($num>0) {
         $result_item = array(
             "id" => $id,
             "name" => $name,
-            "year_from" => $from,
-            "to" => $to
-//            "rating" => $rating,
-//            "description" => $description,
-//            "director" => $director,
-//            "votes" => $votes,
-//            "gross" => $gross
+            "from" => $from,
+            "to" => $to,
+            "rating" => $rating,
+            "description" => $description,
+            "director" => $director,
+            "votes" => $votes,
+            "gross" => $gross
         );
         array_push($results_array["movie"], $result_item);
     }
