@@ -22,7 +22,7 @@ if($num>0) {
         );
         array_push($results_array["records"], $result_item);
     }
-    return json_encode($results_array);
+    echo json_encode($results_array);
 } else {
     http_response_code(404);
     echo json_encode(array("message" => "No records found."));
