@@ -22,7 +22,7 @@
 <div class="container">
     <div class="row">
         <?php
-        include_once ('./Classes/Genre/read.php');
+        include_once ('./Classes/Genre');
             $genres = getGenres();
             foreach ($genres as $genre) {
                 echo "<p>" . $genre.name . "</p>";
