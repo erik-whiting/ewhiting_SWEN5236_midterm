@@ -21,7 +21,7 @@
 
 <?php
     include_once './Classes/Genre/read.php';
-    $genres = getGenres();
+    $genres[] = getGenres();
     print_r($genres);
 ?>
 <div class="container">
