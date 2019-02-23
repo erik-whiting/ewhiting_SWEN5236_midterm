@@ -19,8 +19,11 @@
     </div>
 </div>
 
-<?php include_once './Classes/Genre/read.php' ?>
-<?php print_r($results_array); ?>
+<?php
+    include_once './Classes/Genre/read.php';
+    $genres = getGenres();
+    print_r($genres);
+?>
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
