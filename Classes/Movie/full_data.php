@@ -10,9 +10,9 @@ $movie = new Movie($db);
 $stmt = $movie->full_data(1);
 $num = $stmt->rowcount();
 
-if ($num > 0) {
+if ($num>0) {
     $results_array = array();
-    $results_array["movie"];
+    $results_array["movie"]=array();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
         $result_item = array(
