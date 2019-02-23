@@ -1,4 +1,4 @@
-<?
+<?php
 include_once '../header.php';
 include_once 'Genre.php';
 include_once '../Movie/full_data.php';
