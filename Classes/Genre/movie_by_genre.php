@@ -1,4 +1,5 @@
-<?php
+<!DOCTYPE html>   
+<html lang="en">  <?php
 include_once '../header.php';
 include_once 'Genre.php';
 include_once '../Movie/full_data.php';
@@ -28,8 +29,6 @@ if ($num > 0) {
     echo json_encode(array("message" => "Could not find requested data"));
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
