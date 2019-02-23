@@ -27,6 +27,6 @@ function getGenres() {
         return $results_array;
     } else {
         http_response_code(404);
-        echo json_encode(array("message" => "No records found."));
+        return json_encode(array("message" => "No records found."));
     }
 }
