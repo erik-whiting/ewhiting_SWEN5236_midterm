@@ -18,7 +18,6 @@ function getMovie($movie_id) {
 
     if ($num>0) {
         $results_array = array();
-        $results_array["movie"]=array();
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
             extract($rating->fetch(PDO::FETCH_ASSOC));
@@ -33,7 +32,7 @@ function getMovie($movie_id) {
                 "votes" => $votes,
                 "gross" => $gross
             );
-            array_push($results_array["movie"], $result_item);
+            array_push($results_array, $result_item);
         }
         http_response_code(200);
         return json_encode($results_array);
