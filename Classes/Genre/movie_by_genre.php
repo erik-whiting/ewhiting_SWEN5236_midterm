@@ -1,5 +1,3 @@
-<!DOCTYPE html>   
-<html lang="en">
 <?php
 include_once '../header.php';
 include_once 'Genre.php';
@@ -31,7 +29,9 @@ if ($num > 0) {
 }
 ?>
 <?php function TestBlockHTML ($replStr) { ob_start(); ?>
-<head>
+ <!DOCTYPE html>
+<<html lang="en">
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
