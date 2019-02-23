@@ -22,6 +22,9 @@ ini_set('display_errors', 1);
         <h1>Browse Popular Genres</h1>
     </div>
 </div>
+<div id="test">
+
+</div>
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
