@@ -12,7 +12,7 @@ ini_set('display_errors', 1);
 //
 //$genre = new Genre($db);
 //
-//$genre_id = $_GET['genre'];
+$genre_id = $_GET['genre'];
 //
 //$stmt = $genre->getMovies($genre_id);
 //$num = $stmt->rowcount();
