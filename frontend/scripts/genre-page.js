@@ -27,7 +27,7 @@ document.getElementById("animation").innerText = genres[0]["name"];
 function return_values(index, value) {
     return genres[index][value];
 }
-
+var x = document.getElementById("test");
 genres.forEach(function(genre){
-    document.getElementById("test").innerText = genre.name;
-})
+    x.innerText += genre.name;
+});
