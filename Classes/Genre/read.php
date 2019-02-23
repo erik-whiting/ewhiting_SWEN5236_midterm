@@ -31,3 +31,4 @@ function getGenres() {
     }
 }
 
+echo getGenres();
