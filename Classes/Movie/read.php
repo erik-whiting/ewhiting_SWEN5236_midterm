@@ -1,5 +1,5 @@
 <?php
-include_once  '/home/erik/localcode/midterm/Classes/header.php';
+include_once  '../header.php';
 include_once 'Movie.php';
 
 $database = new DB();
