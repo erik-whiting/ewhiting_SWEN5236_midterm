@@ -10,10 +10,10 @@ function getMovie($movie_id) {
 
     $movie = new Movie($db);
 
-    $stmt = $movie->full_data(1);
+    $stmt = $movie->full_data($movie_id);
     $num = $stmt->rowcount();
 
-    $rating = $movie->get_vote_info(1);
+    $rating = $movie->get_vote_info($movie_id);
     $rnum = $rating->rowcount();
 
     if ($num>0) {

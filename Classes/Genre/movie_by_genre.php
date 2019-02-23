@@ -19,7 +19,7 @@ if ($num > 0) {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
         $result_item = getMovie($movie);
-        array_push($results_array, $result_item);
+        array_push($results_array["movies"], $result_item);
     }
     http_response_code(200);
     echo json_encode($results_array);
