@@ -38,8 +38,8 @@ class Movie
     }
 
     function full_data($id) {
-        $query = "SELECT m.name AS 'name', m.year_from AS 'from', m.year_to AS 'to' " .
-           $this->get_rating($id) . " AS 'rating' m.description AS 'description',
+        $query = "SELECT m.name AS 'name', m.year_from AS 'from', m.year_to AS 'to', " .
+           $this->get_rating($id) . " AS 'rating', m.description AS 'description',
            CONCAT(d.first_name, \" \", d.last_name) AS \"director\", "
            . $this->get_votes($id) . " AS \"votes\", m.gross AS 'gross'
         FROM Movie m
