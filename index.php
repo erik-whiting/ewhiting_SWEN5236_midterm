@@ -23,8 +23,10 @@
     <div class="row">
         <?php
         include_once ('./Classes/Genre/read.php');
-
-
+            $genres = getGenres();
+            foreach ($genres as $genre) {
+                echo "<p>" . $genre.name . "</p>";
+        }
         ?>
 <!--        <div class="col-sm-4">-->
 <!--            <a id="Action-link">-->
