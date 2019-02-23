@@ -33,6 +33,7 @@ if ($num>0) {
         array_push($results_array["movie"], $result_item);
     }
     http_response_code(200);
+    echo json_encode($results_array);
     return json_encode($results_array);
 } else {
     echo json_encode(array("message" => "No record found for that movie"));
