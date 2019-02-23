@@ -36,4 +36,36 @@ class Movie
 
         return $stmt;
     }
+
+    function full_data($id) {
+        $query = "SELECT m.name AS 'name', m.year_from AS 'from', m.year_to, AS 'to' " .
+           $this->get_rating($id) . " AS 'rating' m.description AS 'description',
+           CONCAT(d.first_name, \" \", d.last_name) AS \"director\", "
+           . $this->get_votes($id) . " AS \"votes\", m.gross AS 'gross' 
+        FROM Movie m
+        INNER JOIN Director d on m.director_id = d.id
+        WHERE m.id = " . $id;
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt;
+    }
+
+    function get_rating($id) {
+        $query = "SELECT AVG(rating_id) AS 'avg' FROM movie_rating WHERE movie_id = " . $id;
+        $stmt = $this->conn->prepare($query);
+        $avg = $stmt->execute();
+        $row = $avg->fetch(PDO::FETCH_ASSOC);
+        $return = $row['avg'];
+        $return = number_format($return, 2);
+        return $return;
+    }
+
+    function get_votes($id) {
+        $query = "SELECT COUNT(rating_id) AS 'votes' FROM movie_rating WHERE movie_id = " . $id;
+        $stmt = $this->conn->prepare($query);
+        $votes = $stmt.execute();
+        $row = $votes->fetch(PDO::FETCH_ASSOC);
+        $return = $row['votes'];
+        return $return;
+    }
 }

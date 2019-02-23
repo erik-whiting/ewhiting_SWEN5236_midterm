@@ -23,4 +23,17 @@ class Genre
         return $stmt;
     }
 
+    function getMovies($genre_id) {
+        $query = "SELECT m.id AS 'movie', g.name AS 'genre_name' FROM Genre g
+                    INNER JOIN movie_genre mg
+                    ON mg.genre_id = g.id
+                    INNER JOIN Movie m
+                    ON m.id = mg.movie_id
+                    WHERE g.id = " . $genre_id;
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+
+        return $stmt;
+    }
+
 }
