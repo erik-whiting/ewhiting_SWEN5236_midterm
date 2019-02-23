@@ -2,8 +2,7 @@
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
-//include_once './Classes/header.php';
+include_once '/home/erik/localcode/midterm/Classes/header.php';
 //include_once './Classes/Genre/Genre.php';
 //include_once './Classes/Movie/full_data.php';
 //
