@@ -12,6 +12,7 @@ $.get(url, function(data, status) {
         document.getElementById(link_id).setAttribute('href', genre_url);
         var img_id = genre.name + '-img';
         document.getElementById(img_id).src = genre.picture_path;
+
     })
 });
 
@@ -27,7 +28,3 @@ document.getElementById("animation").innerText = genres[0]["name"];
 function return_values(index, value) {
     return genres[index][value];
 }
-var x = document.getElementById("test");
-genres.forEach(function(genre){
-    x.innerText += genre.name;
-});
