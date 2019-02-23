@@ -28,7 +28,6 @@ if ($num > 0) {
     echo json_encode(array("message" => "Could not find requested data"));
 }
 ?>
-<html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,5 +47,4 @@ if ($num > 0) {
     </div>
 </div>
 </body>
-</html>
 </html>
