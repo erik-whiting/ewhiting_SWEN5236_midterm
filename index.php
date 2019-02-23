@@ -33,7 +33,7 @@ ini_set('display_errors', 1);
     var app = angular.module('myApp', []);
     app.controller('customersCtrl', function($scope, $http) {
         $http.get(url)
-            .then(function (response) {$scope.names = response.data.records;});
+            .then(function (response) {$scope.genres = response.data.records;});
     });
 </script>
 
