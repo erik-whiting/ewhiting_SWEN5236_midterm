@@ -2,12 +2,11 @@
 include_once  '../header.php';
 include_once 'Genre.php';
 
+$database = new DB();
+$db = $database->getConnection();
+
 function getGenres() {
-
-    $database = new DB();
-    $db = $database->getConnection();
-
-    $genre = new Genre($db);
+    $genre = new Genre($this->db);
 
     $stmt = $genre->read();
     $num = $stmt->rowCount();
