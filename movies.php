@@ -1,17 +1,17 @@
 <?php
-include_once './Classes/header.php';
-include_once './Classes/Genre/Genre.php';
-include_once './Classes/Movie/full_data.php';
-
-$database = new DB();
-$db = $database->getConnection();
-
-$genre = new Genre($db);
-
-$genre_id = $_GET['genre'];
-
-$stmt = $genre->getMovies($genre_id);
-$num = $stmt->rowcount();
+//include_once './Classes/header.php';
+//include_once './Classes/Genre/Genre.php';
+//include_once './Classes/Movie/full_data.php';
+//
+//$database = new DB();
+//$db = $database->getConnection();
+//
+//$genre = new Genre($db);
+//
+//$genre_id = $_GET['genre'];
+//
+//$stmt = $genre->getMovies($genre_id);
+//$num = $stmt->rowcount();
 
 //if ($num > 0) {
 //    $results_array = array();
