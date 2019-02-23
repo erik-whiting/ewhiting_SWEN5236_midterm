@@ -24,6 +24,7 @@ if ($num > 0) {
     }
     http_response_code(200);
     $movies = json_encode($results_array);
+    return $movies;
 } else {
     echo json_encode(array("message" => "Could not find requested data"));
 }
