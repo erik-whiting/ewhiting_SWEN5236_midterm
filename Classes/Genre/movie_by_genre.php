@@ -30,6 +30,7 @@ if ($num > 0) {
     echo json_encode(array("message" => "Could not find requested data"));
 }
 ?>
+<?php function TestBlockHTML ($replStr) { ob_start(); ?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,3 +49,6 @@ if ($num > 0) {
 </div>
 </body>
 </html>
+<?php
+    return ob_get_clean();
+} ?>
