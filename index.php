@@ -27,6 +27,7 @@ ini_set('display_errors', 1);
 <div ng-app="myApp" ng-controller="customersCtrl">
     <tr ng-repeat="x in genres">
         <td>{{ x.name }}</td>
+        <td>{{ x.picture_path }}</td>
     </tr>
 </div>
 <script>
