@@ -23,8 +23,7 @@ if ($num > 0) {
         array_push($results_array["movies"], $result_item);
     }
     http_response_code(200);
-    $movies = json_encode($results_array);
-    return $movies;
+    echo json_encode($results_array["movies"]);
 } else {
     echo json_encode(array("message" => "Could not find requested data"));
 }
