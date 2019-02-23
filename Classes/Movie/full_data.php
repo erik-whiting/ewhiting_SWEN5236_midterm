@@ -24,7 +24,7 @@ if ($num>0) {
             "name" => $name,
             "from" => $from,
             "to" => $to,
-            "rating" => $avg,
+            "rating" => number_format($avg, 2),
             "description" => $description,
             "director" => $director,
             "votes" => $votes,
