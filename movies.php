@@ -24,14 +24,14 @@ if ($num > 0) {
         $result_item = getMovie($movie);
         array_push($results_array["movies"], $result_item);
     }
-    http_response_code(200);
     return json_encode($results_array);
 } else {
     echo json_encode(array("message" => "Could not find requested data"));
 }
 
 ?>
-<?php function TestBlockHTML ($replStr) {ob_start(); ?>
+<?php //function TestBlockHTML ($replStr) {ob_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,4 +52,5 @@ if ($num > 0) {
 </div>
 </body>
 </html>
-<?php return ob_get_clean(); } ?>
+<?php //return ob_get_clean(); } 
+?>
