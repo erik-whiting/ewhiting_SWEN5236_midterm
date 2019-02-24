@@ -1,11 +1,14 @@
 var url = "http://ewhiting.eastus.cloudapp.azure.com/midterm/Classes/AppUser/get_cart.php/?user=1";
 
 
-$.get(url, function(data) {
-    var navContent = data.receipt;
-    var navbar = new Navbar(navContent);
-    setContent(navbar);
-})
+var setCart = function() {
+    $.get(url, function(data) {
+        var navContent = data.receipt;
+        var navbar = new Navbar(navContent);
+        setContent(navbar);
+    })
+}
+
 
 class Navbar {
     constructor(receipt) {
@@ -16,6 +19,7 @@ class Navbar {
 }
 
 var setContent = function(navbar) {
+    var homeUrl = 'http://ewhiting.eastus.cloudapp.azure.com/midterm';
     var nav = document.getElementById("nav");
     var buildHTML = "<div class='container-fluid'>";
     buildHTML += "<div class='navbar-header'><a class=\"navbar-brand\" href=\"#\">Erik's SWEN 5236 Midterm</a></div>";
