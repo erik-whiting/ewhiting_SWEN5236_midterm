@@ -27,4 +27,31 @@ class AppUser
         return $stmt;
     }
 
+    function getCart($user_id) {
+        $query = "SET @user_cart := (SEELCT id FROM Cart WHERE user_id = " . $user_id .
+            " AND active = 1;
+            SELECT m.name AS 'movie_name', m.price AS 'movie_price' FROM movie_cart mc
+            INNER JOIN Movie m
+            ON mc.movie_id = m.id
+            WHERE cart_id = @user_cart";
+        $stmt = $this->conn.prepare($query);
+        $stmt->exectute();
+
+        return $stmt;
+    }
+
+    function getCountAndPrice($user_id) {
+        $query = "SET @user_cart := (SEELCT id FROM Cart WHERE user_id = " . $user_id .
+            " AND active = 1;
+            SELECT COUNT(m.name) AS 'cart_count', 
+            SUM(m.price) AS 'cart_price' FROM movie_cart mc
+            INNER JOIN Movie m
+            ON mc.movie_id = m.id
+            WHERE cart_id = @user_cart";
+        $stmt = $this->conn.prepare($query);
+        $stmt->exectute();
+
+        return $stmt;
+    }
+
 }
