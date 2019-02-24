@@ -12,6 +12,7 @@ ini_set('display_errors', 1);
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <script src="frontend/scripts/cart.js"></script>
+    <script src="frontend/scripts/cart-page.js"></script>
 
 </head>
 
