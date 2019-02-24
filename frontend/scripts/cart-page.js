@@ -8,7 +8,6 @@ var getCartItems = function() {
             var item = new Item(item);
             items.push(item);
         })
-        setCartHtml(navbar);
     })
 }
 
