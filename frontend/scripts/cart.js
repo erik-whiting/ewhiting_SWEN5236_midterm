@@ -19,12 +19,13 @@ class Navbar {
 
 var setCartHtml = function(navbar) {
     var homeUrl = 'http://ewhiting.eastus.cloudapp.azure.com/midterm';
+    var cartUrl = 'http://ewhiting.eastus.cloudapp.azure.com/midterm/usercart.php';
     var nav = document.getElementById("nav");
     var buildHTML = "<div class='container-fluid'>";
     buildHTML += "<div class='navbar-header'><a class=\"navbar-brand\" href=" + homeUrl
         + ">Erik's SWEN 5236 Midterm</a></div>";
     buildHTML += "<ul class='nav navbar-nav'>" +
-        "<li class='active'><a href='#'>Your Cart: " + navbar.cart_count + "</a></li></ul>";
+        "<li class='active'><a href='" + cartUrl + "'>Your Cart: " + navbar.cart_count + "</a></li></ul>";
     buildHTML += "</div>";
     nav.innerHTML = buildHTML;
 }
