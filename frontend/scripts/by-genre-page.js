@@ -36,5 +36,7 @@ class Movie {
     }
 }
 
-content = document.getElementById('content');
-content.innerText = "KJKJKJJKKKJKK";
+var setContent = function() {
+    var content = document.getElementById('content');
+    content.innerText = "KJKJKJJKKKJKK";
+};

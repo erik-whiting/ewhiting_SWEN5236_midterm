@@ -20,8 +20,9 @@ ini_set('display_errors', 1);
     <div class="container text-center">
         <h1>Browse Popular Movies</h1>
     </div>
-    <div id="content"></div>
+
 </div>
+<div id="content"></div>
 </body>
 </html>
 
