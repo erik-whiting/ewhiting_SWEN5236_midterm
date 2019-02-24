@@ -22,7 +22,8 @@ $.get(url, function(data, status) {
 
 class Movie {
     constructor(build_object) {
-        var bo = JSON.parse(build_object);
+        var ao = JSON.parse(build_object);
+        var bo = ao[0];
         this.id = bo.id;
         this.name = bo.name;
         this.description = bo.description;
