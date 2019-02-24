@@ -48,7 +48,7 @@ class AppUser
             INNER JOIN Movie m
             ON mc.movie_id = m.id
             WHERE cart_id = @user_cart";
-        $stmt = $this->conn.prepare($query);
+        $stmt = $this->conn->prepare($query);
         $stmt->execute();
 
         return $stmt;
