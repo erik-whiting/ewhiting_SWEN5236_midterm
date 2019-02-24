@@ -54,13 +54,14 @@ var setMovies = function(movies) {
         '  <tbody>';
 
     movies.forEach(function(movie) {
+        var funcName = "addToCart(" + movie.id + ", 1)";
         buildHTML += "<tr>";
         buildHTML += "<th scope='row'>" + movie.name +
-            "<br /><img id=\"Action-img\" src=\"https://placehold.it/150x80?text=IMAGE\" " +
-            "class=\"img-responsive\" style=\"width:100%\" alt=\"Image\">" + "</th>";
+            "<br /><img id='Action-img' src='https://placehold.it/150x80?text=IMAGE' " +
+            "class='img-responsive' style='width:100%' alt='Image'>" + "</th>";
         buildHTML += "<td>" + movie.description + "<br />Rating: " +
             movie.rating + " from " + movie.votes + " votes<br />" +
-            "<button type=\"button\" class=\"btn btn-primary\">Add to Cart!</button></td>";
+            "<button onClick='" + funcName + "' type='button' class='btn btn-primary'>Add to Cart!</button></td>";
         buildHTML += "<td>Price: $" + movie.price + " <br />Grossed: " + movie.gross + "</td>";
         buildHTML += "<td>Directed By: " + movie.director + "</td>";
         buildHTML += "</tr>";
@@ -70,3 +71,14 @@ var setMovies = function(movies) {
         "</table>";
     content.innerHTML = buildHTML;
 }
+
+var addToCart = function(movie, user) {
+    var params = "?movie=" + movie + "&user=" + user;
+    $.ajax({
+      type: "GET",
+      url: "http://ewhiting.eastus.cloudapp.azure.com/midterm/Classes/Cart/add_to_cart.php/" + params,
+    }).done(function (msg) {
+
+    })
+    location.reload();
+};
