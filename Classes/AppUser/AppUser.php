@@ -29,7 +29,7 @@ class AppUser
 
     function getCart($user_id) {
         $query = "SET @user_cart := (SELECT id FROM Cart WHERE user_id = " . $user_id .
-            " AND active = 1;
+            " AND active = 1);
             SELECT m.name AS 'movie_name', m.price AS 'movie_price' FROM movie_cart mc
             INNER JOIN Movie m
             ON mc.movie_id = m.id
