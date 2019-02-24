@@ -12,14 +12,17 @@ function getUrlVars() {
 var genre_id = getUrlVars()["genre"];
 url += genre_id;
 
-$.get(url, function(data, status) {
-    var records = data.movies;
-    records.forEach(function (record, i) {
-        var movie = new Movie(record);
-        movies.push(movie);
+var getMovies = function() {
+    $.get(url, function(data, status) {
+        var records = data.movies;
+        records.forEach(function (record, i) {
+            var movie = new Movie(record);
+            movies.push(movie);
+        });
+        setContent();
     });
-    setContent();
-});
+}
+
 
 class Movie {
     constructor(build_object) {
