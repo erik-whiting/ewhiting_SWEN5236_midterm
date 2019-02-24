@@ -8,8 +8,8 @@ $db = $database->getConnection();
 $user = new AppUser($db);
 $user_id = $_GET['user'];
 $discount_pct = $_GET['discount'];
-$discount_pct = number_format($discount_pct * 0.01, 4);
-$discount = number_format(1 - $discount_pct);
+$discount_pct = number_format($discount_pct * 0.01, 2);
+$discount = number_format(1 - $discount_pct, 2);
 
 $stmt = $user->getCart($user_id);
 $num = $stmt->rowcount();
