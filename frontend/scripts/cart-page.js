@@ -53,13 +53,15 @@ var setReceipt = function(receipt) {
     }
     receiptHtml += "<button onclick='doCheckout()' type='button' class='btn btn-primary'>Checkout!</button>";
     receiptHtml += "<button onclick='setDiscountReceipt()' type='button' class='btn btn-btn-warning'>" +
-        "Get 15 Percent Discount!</button>;"
+        "Get 15 Percent Discount!</button>";
     var content = document.getElementById("content");
     content.innerHTML += receiptHtml;
 
 }
 
 var setDiscountReceipt = function() {
+    var content = document.getElementById("content");
+    content.innerHTML = "";
     var url = "http://ewhiting.eastus.cloudapp.azure.com/midterm/Classes/AppUser/get_cart_discount.php/";
     var params = "?user=1&discount=15";
     var url = url + params;
