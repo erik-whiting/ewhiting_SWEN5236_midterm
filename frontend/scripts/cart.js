@@ -1,5 +1,7 @@
 var url = "http://ewhiting.eastus.cloudapp.azure.com/midterm/Classes/AppUser/get_cart.php/?user=1";
 
+$.ajaxSetup({async: false});
+
 $.get(url, function(data) {
     var navContent = data.receipt;
     var navbar = new Navbar(navContent);
