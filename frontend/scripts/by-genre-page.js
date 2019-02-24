@@ -16,6 +16,7 @@ $.get(url, function(data, status) {
     var records = data.movies;
     records.forEach(function (record, i) {
         var movie = new Movie(record);
+        movies.push(movie);
     })
 });
 
