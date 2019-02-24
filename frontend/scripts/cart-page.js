@@ -4,8 +4,8 @@ var getCartItems = function() {
     $.get(url, function(data) {
         var receipt = data.receipt;
         var items = data.items;
-        items.forEach(function (item) {
-            var item = new Item(item);
+        items.forEach(function (item_json) {
+            var item = new Item(item_json);
             items.push(item);
         })
     })
