@@ -1,7 +1,7 @@
 
 var setCart = function() {
-    var cartUrl = "http://ewhiting.eastus.cloudapp.azure.com/midterm/Classes/AppUser/get_cart.php/?user=1";
-    $.get(cartUrl, function(data) {
+    var url = "http://ewhiting.eastus.cloudapp.azure.com/midterm/Classes/AppUser/get_cart.php/?user=1";
+    $.get(url, function(data) {
         var navContent = data.receipt;
         var navbar = new Navbar(navContent);
         setCartHtml(navbar);
