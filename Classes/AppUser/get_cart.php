@@ -11,14 +11,13 @@ $user_id = $_GET['user'];
 $stmt = $user->getCart($user_id);
 $num = $stmt->rowcount();
 $counts = $user->getCountAndPrice($user_id);
-$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($row) {
+if ($stmt) {
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         $results_array = array();
         $results_array["items"] = array();
         $results_array["receipt"] = array();
-        while ($row) {
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
             $result_item = array(
                 "movie" => $movie_name,
