@@ -9,7 +9,7 @@ $user = new AppUser($db);
 $user_id = $_GET['user'];
 
 $stmt = $user->getCart($user_id);
-$num = $stmt->rowcount();
+$num = $stmt->query("SELECT * FROM table")->fetchAll();
 $counts = $user->getCountAndPrice($user_id);
 
 if ($num > 0) {
@@ -40,13 +40,14 @@ if ($num > 0) {
         "movie" => 0,
         "price" => 0,
     );
+    array_push($results_array["items"], $results_array);
     $price_array = array(
         "cart_count" => 0,
         "tax" => 0,
         "total" => 0
     );
-    array_push($results_array["items"], $results_array);
     array_push($results_array["receipt"], $price_array);
+
     http_response_code(200);
     echo json_encode($results_array);
 }
