@@ -52,7 +52,7 @@ var setReceipt = function(receipt) {
         receiptHtml += "<div class='cart-savings'><b>Savings: $" + receipt.savings + "</b></div>";
     }
     receiptHtml += "<button onclick='doCheckout()' type='button' class='btn btn-primary'>Checkout!</button>";
-    receiptHtml += "<button onclick='setDiscountReceipt()' type='button' class='btn btn-btn-warning'>" +
+    receiptHtml += "<button onclick='setDiscountReceipt()' type='button' class='btn btn-success'>" +
         "Get 15 Percent Discount!</button>";
     var content = document.getElementById("content");
     content.innerHTML += receiptHtml;
@@ -64,7 +64,7 @@ var setDiscountReceipt = function() {
     content.innerHTML = "";
     var url = "http://ewhiting.eastus.cloudapp.azure.com/midterm/Classes/AppUser/get_cart_discount.php/";
     var params = "?user=1&discount=15";
-    var url = url + params;
+    url = url + params;
     $.get(url, function(data) {
         var receipt_json = new Receipt(data.receipt[0]);
         receipt.push(receipt_json);
