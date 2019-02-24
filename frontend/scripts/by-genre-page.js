@@ -35,3 +35,6 @@ class Movie {
         this.gross = bo.gross;
     }
 }
+
+content = document.getElementById('content');
+content.innerText = "KJKJKJJKKKJKK";
