@@ -24,13 +24,14 @@ ini_set('display_errors', 1);
     </div>
 
 </div>
-<div id="content">
-    <script></script>
+<div id="content" onload="getMovies()">
+    <script>
+
+    </script>
 </div>
 <script>
     window.onload = function() {
     setCart();
-    getMovies();
     }
 </script>
 </body>
