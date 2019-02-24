@@ -16,7 +16,7 @@ ini_set('display_errors', 1);
 
 </head>
 <body>
-
+<nav id="nav" class="navbar navbar-inverse"></nav>
 <div class="jumbotron">
     <div class="container text-center">
         <h1>Browse Popular Genres</h1>
