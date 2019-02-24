@@ -24,9 +24,13 @@ ini_set('display_errors', 1);
     </div>
 
 </div>
-<div id="content" onload="getMovies()">
+<div id="content">
 </div>
-
+<script>
+    window.onload = function() {
+        getMovies();
+    }
+</script>
 </body>
 </html>
 
