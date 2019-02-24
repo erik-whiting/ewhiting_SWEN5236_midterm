@@ -41,8 +41,8 @@ class AppUser
     }
 
     function getCountAndPrice($user_id) {
-        $query = "SET @user_cart := (SEELCT id FROM Cart WHERE user_id = " . $user_id .
-            " AND active = 1;
+        $query = "SET @user_cart := (SELECT id FROM Cart WHERE user_id = " . $user_id .
+            " AND active = 1);
             SELECT COUNT(m.name) AS 'cart_count', 
             SUM(m.price) AS 'cart_price' FROM movie_cart mc
             INNER JOIN Movie m
