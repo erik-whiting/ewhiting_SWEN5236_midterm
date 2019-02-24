@@ -26,3 +26,14 @@ class Receipt {
         this.total = receipt.total;
     }
 }
+
+var setCartContent = function(items) {
+    var content = document.getElementById("content");
+    var buildHTML = "";
+    items.forEach(function (item) {
+        buildHTML += "<div class='cart-item'>";
+        buildHTML += item.movie_name + " " + item.price;
+        buildHTML += "</div>";
+    })
+    content.innerHTML = buildHTML;
+}
