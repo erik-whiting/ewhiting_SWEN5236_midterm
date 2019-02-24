@@ -17,7 +17,7 @@ class Navbar {
     }
 }
 
-var setContent = function(navbar) {
+var setCart = function(navbar) {
     var homeUrl = 'http://ewhiting.eastus.cloudapp.azure.com/midterm';
     var nav = document.getElementById("nav");
     var buildHTML = "<div class='container-fluid'>";

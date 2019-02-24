@@ -40,7 +40,7 @@ class Movie {
     }
 }
 
-var setContent = function(movies) {
+var setMovies = function(movies) {
     var content = document.getElementById('content');
     var buildHTML = '<table class="table table-bordered">\n' +
         '  <thead>\n' +
