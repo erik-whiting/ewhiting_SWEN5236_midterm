@@ -1,4 +1,7 @@
-<?php include_once('./frontend/by-genre-page.js'); ?>
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +12,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="frontend/css/style.css">
-<!--    <script src="frontend/scripts/by-genre-page.js"></script>-->
+    <script src="frontend/scripts/by-genre-page.js"></script>
+    <script src="frontend/scripts/genre-page.js"></script>
+
 
 </head>
 <body>
