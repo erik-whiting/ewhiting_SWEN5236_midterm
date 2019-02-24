@@ -3,17 +3,18 @@ create table AppUser
 	id int auto_increment
 		primary key,
 	user_name varchar(50) not null
-)
-;
+);
 
 create table Cart
 (
 	id int auto_increment
 		primary key,
 	date datetime default CURRENT_TIMESTAMP not null,
-	active tinyint(1) default '1' not null
-)
-;
+	active tinyint(1) default 1 not null,
+	user_id int null,
+	constraint Cart__id_fk
+		foreign key (user_id) references AppUser (id)
+);
 
 create table Director
 (
@@ -21,16 +22,15 @@ create table Director
 		primary key,
 	first_name varchar(50) not null,
 	last_name varchar(80) not null
-)
-;
+);
 
 create table Genre
 (
 	id int auto_increment
 		primary key,
-	name varchar(80) not null
-)
-;
+	name varchar(80) not null,
+	picture_path varchar(80) null
+);
 
 create table Movie
 (
@@ -41,17 +41,19 @@ create table Movie
 	year_to varchar(5) null,
 	description blob null,
 	gross decimal(13,2) null,
-	price decimal(4,2) not null
-)
-;
+	price decimal(4,2) not null,
+	director_id int not null,
+	picture_path varchar(80) null,
+	constraint Movie__id_fk
+		foreign key (director_id) references Director (id)
+);
 
 create table Rating
 (
 	id int auto_increment
 		primary key,
 	value int not null
-)
-;
+);
 
 create table Star
 (
@@ -59,8 +61,7 @@ create table Star
 		primary key,
 	first_name varchar(50) not null,
 	last_name varchar(50) not null
-)
-;
+);
 
 create table movie_cart
 (
@@ -68,20 +69,11 @@ create table movie_cart
 		primary key,
 	movie_id int not null,
 	cart_id int not null,
-	constraint movie_cart_Movie_id_fk
-		foreign key (movie_id) references Movie (id),
 	constraint movie_cart_Cart_id_fk
-		foreign key (cart_id) references Cart (id)
-)
-;
-
-create index movie_cart_Cart_id_fk
-	on movie_cart (cart_id)
-;
-
-create index movie_cart_Movie_id_fk
-	on movie_cart (movie_id)
-;
+		foreign key (cart_id) references Cart (id),
+	constraint movie_cart_Movie_id_fk
+		foreign key (movie_id) references Movie (id)
+);
 
 create table movie_genre
 (
@@ -89,20 +81,11 @@ create table movie_genre
 		primary key,
 	movie_id int not null,
 	genre_id int not null,
-	constraint movie_genre_Movie_id_fk
-		foreign key (movie_id) references Movie (id),
 	constraint movie_genre_Genre_id_fk
-		foreign key (genre_id) references Genre (id)
-)
-;
-
-create index movie_genre_Genre_id_fk
-	on movie_genre (genre_id)
-;
-
-create index movie_genre_Movie_id_fk
-	on movie_genre (movie_id)
-;
+		foreign key (genre_id) references Genre (id),
+	constraint movie_genre_Movie_id_fk
+		foreign key (movie_id) references Movie (id)
+);
 
 create table movie_rating
 (
@@ -114,16 +97,7 @@ create table movie_rating
 		foreign key (movie_id) references Movie (id),
 	constraint movie_rating_Rating_id_fk
 		foreign key (rating_id) references Rating (id)
-)
-;
-
-create index movie_rating_Movie_id_fk
-	on movie_rating (movie_id)
-;
-
-create index movie_rating_Rating_id_fk
-	on movie_rating (rating_id)
-;
+);
 
 create table movie_star
 (
@@ -135,34 +109,4 @@ create table movie_star
 		foreign key (movie_id) references Movie (id),
 	constraint movie_star_Star_id_fk
 		foreign key (star_id) references Star (id)
-)
-;
-
-create index movie_star_Movie_id_fk
-	on movie_star (movie_id)
-;
-
-create index movie_star_Star_id_fk
-	on movie_star (star_id)
-;
-
-create table user_cart
-(
-	id int auto_increment
-		primary key,
-	user_id int not null,
-	cart_id int not null,
-	constraint user_cart_AppUser_id_fk
-		foreign key (user_id) references AppUser (id),
-	constraint user_cart_Cart_id_fk
-		foreign key (cart_id) references Cart (id)
-)
-;
-
-create index user_cart_AppUser_id_fk
-	on user_cart (user_id)
-;
-
-create index user_cart_Cart_id_fk
-	on user_cart (cart_id)
-;
+);
