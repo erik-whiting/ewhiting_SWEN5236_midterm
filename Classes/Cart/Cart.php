@@ -28,4 +28,13 @@ class Cart
         return $stmt;
     }
 
+    function handle_checkout($user_id) {
+        $query = "UPDATE Cart SET active = 0 WHERE user_id = " . $user_id . "  
+            AND active = 1;
+            INSERT  INTO Cart (date, active, user_id) 
+            VALUES (NOW(), 1, " . $user_id . ")";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+    }
+
 }
