@@ -11,7 +11,7 @@ var getCartItems = function() {
             items.push(item);
         });
         setCartContent(items);
-        setReceipt(receipt);
+        setReceipt(receipt[0]);
     })
 }
 
