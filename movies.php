@@ -22,7 +22,9 @@ ini_set('display_errors', 1);
     </div>
 
 </div>
-<div id="content" onload="setContent()"></div>
+<div id="content">
+    <script>$(document).ready(function( setContent();) ) {}</script>
+</div>
 </body>
 </html>
 
