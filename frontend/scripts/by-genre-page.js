@@ -8,8 +8,6 @@ function getUrlVars() {
     return vars;
 }
 
-
-
 var getMovies = function() {
     movies = Array();
     url = 'http://ewhiting.eastus.cloudapp.azure.com/midterm/Classes/Genre/movie_by_genre.php/?genre=';
@@ -21,7 +19,7 @@ var getMovies = function() {
             var movie = new Movie(record);
             movies.push(movie);
         });
-        setContent();
+        setContent(movies);
     });
 }
 
@@ -42,7 +40,7 @@ class Movie {
     }
 }
 
-var setContent = function() {
+var setContent = function(movies) {
     var content = document.getElementById('content');
     var buildHTML = '<table class="table table-bordered">\n' +
         '  <thead>\n' +
