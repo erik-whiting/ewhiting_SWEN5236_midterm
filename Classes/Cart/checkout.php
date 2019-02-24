@@ -6,6 +6,6 @@ $database = new DB();
 $db = $database->getConnection();
 
 $user_id = $_GET['user'];
-$cart= new Cart();
+$cart= new Cart($db);
 
 $cart->handle_checkout($user_id);
