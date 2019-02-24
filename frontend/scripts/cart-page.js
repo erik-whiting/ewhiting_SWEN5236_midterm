@@ -30,7 +30,6 @@ class Receipt {
         this.total = receipt.total;
         if (receipt.savings != null) {
             this.savings = receipt.savings;
-            this.savings = this.savings.toFixed(2);
         }
     }
 }

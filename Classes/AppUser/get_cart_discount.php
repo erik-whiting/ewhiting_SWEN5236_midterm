@@ -37,6 +37,12 @@ if ($stmt) {
     $price_array["tax"] *= $discount;
     $price_array["savings"] = number_format($price_array["total"] - ($price_array["total"] * $discount), 2);
     $price_array["total"] *= $discount;
+
+    $price_array["subtotal"] = number_format($price_array["subtotal"], 2);
+    $price_array["tax"] = number_format($price_array["tax"], 2);
+    $price_array["savings"] = number_format($price_array["savings"], 2);
+    $price_array["total"] = number_format($price_array["total"], 2);
+
     array_push($results_array["receipt"], $price_array);
     http_response_code(200);
     echo json_encode($results_array);
