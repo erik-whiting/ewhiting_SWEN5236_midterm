@@ -20,18 +20,16 @@ if ($num > 0) {
         extract($row);
         $result_item = array(
             "movie" => $movie_name,
-            "price" => $movie_price,
-            "cart_count" => $cart_count,
-            "subtotal" => $cart_price,
-            "tax" => number_format($cart_price * 0.08, 2),
-            "total" => number_format($cart_price + ($cart_price * 0.08), 2)
+            "price" => $movie_price
         );
         array_push($results_array["items"], $result_item);
     }
     extract($counts->fetch(PDO::FETCH_ASSOC));
-    $price_array = array("tax" => number_format($cart_price * 0.08, 2),
+    $price_array = array("subtotal" => number_format($cart_price, 2),
+        "cart_count" => $cart_count,
+        "tax" => number_format($cart_price * 0.08, 2),
         "total" => number_format($cart_price + ($cart_price * 0.08), 2));
-    array_push($results_array["items"], $price_array);
+    array_push($results_array["receipt"], $price_array);
     http_response_code(200);
     echo json_encode($results_array);
 } else {
