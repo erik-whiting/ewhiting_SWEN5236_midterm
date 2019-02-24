@@ -8,7 +8,7 @@ Navigation cues are included in the web pages. The index page is a list of movie
 genre and can be reached by clicking "Erik's SWEN 5236 Midterm" button in the top 
 menu.  From the movies page, you can click "Add to Cart" on any movie to add the movie
 to your cart.  To view your cart, click the "Your Cart" button in the top menu. Here 
-you can see your subtotal, taxes, and grand total.
+you can see your subtotal, taxes, and grand total. You can also apply a 15% discount.
 From your cart page, you can click "checkout." This will clear your cart, there is 
 no actual money or anything, so click away.
 
