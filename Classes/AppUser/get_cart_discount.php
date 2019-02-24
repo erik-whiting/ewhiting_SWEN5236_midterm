@@ -29,10 +29,10 @@ if ($stmt) {
     }
     extract($counts->fetch(PDO::FETCH_ASSOC));
     $price_array = array(
-        "subtotal" => number_format($cart_price * $discount, 2),
+        "subtotal" => number_format(($cart_price * $discount), 2),
         "cart_count" => $cart_count,
-        "tax" => number_format($discount * ($cart_price * 0.08), 2),
-        "total" => number_format( $discount * ($cart_price + ($cart_price * 0.08)), 2),
+        "tax" => number_format(($discount * ($cart_price * 0.08)), 2),
+        "total" => number_format( ($discount * ($cart_price + ($cart_price * 0.08))), 2),
         "savings" => number_format(($cart_price + ($cart_price * 0.08))) -
             ($discount * ($cart_price + ($cart_price * 0.08))), 2);
     array_push($results_array["receipt"], $price_array);
