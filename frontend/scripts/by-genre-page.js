@@ -19,7 +19,7 @@ var getMovies = function() {
             var movie = new Movie(record);
             movies.push(movie);
         });
-        setContent(movies);
+        setMovies(movies);
     });
 }
 
