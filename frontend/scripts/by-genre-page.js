@@ -38,5 +38,20 @@ class Movie {
 
 var setContent = function() {
     var content = document.getElementById('content');
-    content.innerText = "KJKJKJJKKKJKK";
+    var buildHTML = '<table class="table table-bordered">\n' +
+        '  <thead>\n' +
+        '    <tr>\n' +
+        '      <th scope="col">#</th>\n' +
+        '      <th scope="col">First</th>\n' +
+        '      <th scope="col">Last</th>\n' +
+        '      <th scope="col">Handle</th>\n' +
+        '    </tr>\n' +
+        '  </thead>\n' +
+        '  <tbody>';
+
+
+
+    buildHTML += '</tbody>\n' +
+        '</table>';
+    content.innerText = buildHTML;
 };
