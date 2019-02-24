@@ -21,6 +21,9 @@ ini_set('display_errors', 1);
 <div class="jumbotron">
     <div class="container text-center">
         <h1>Browse Popular Movies</h1>
+        <p>Click "Add to Cart" to add a movie to your cart</p>
+        <p>Click on "Your Cart" to see your receipt</p>
+        <p>Click on "Erik's SWEN 5236 Midterm" to return to the home page</p>
     </div>
 
 </div>

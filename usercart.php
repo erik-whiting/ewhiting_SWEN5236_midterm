@@ -23,6 +23,8 @@ ini_set('display_errors', 1);
 <div class="jumbotron">
     <div class="container text-center">
         <h1>Your Cart</h1>
+        <p>Click "Checkout" to checkout (just clears your cart)</p>
+        <p>Click on "Erik's SWEN 5236 Midterm" to return to the home page</p>
     </div>
 
 </div>

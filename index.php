@@ -21,6 +21,7 @@ ini_set('display_errors', 1);
 <div class="jumbotron">
     <div class="container text-center">
         <h1>Browse Popular Genres</h1>
+        <p>Click on a genre to see a list of movies</p>
     </div>
 </div>
 <div id="test">
