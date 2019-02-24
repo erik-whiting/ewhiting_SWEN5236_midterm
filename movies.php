@@ -13,7 +13,7 @@ ini_set('display_errors', 1);
 
     <link rel="stylesheet" href="../frontend/css/style.css">
     <script type="text/javascript" src="../frontend/scripts/by-genre-page.js"></script>
-    <script type="text/javascript" src="../frontend/scripts/cart.js"></script>
+<!--    <script type="text/javascript" src="../frontend/scripts/cart.js"></script>-->
 
 </head>
 <body>
@@ -25,15 +25,8 @@ ini_set('display_errors', 1);
 
 </div>
 <div id="content" onload="getMovies()">
-    <script>
-
-    </script>
 </div>
-<script>
-    window.onload = function() {
-    getMovies();
-    }
-</script>
+
 </body>
 </html>
 
