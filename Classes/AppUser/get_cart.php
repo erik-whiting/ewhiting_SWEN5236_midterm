@@ -14,6 +14,7 @@ $counts = $user->getCountAndPrice($user_id);
 
 if ($num > 0) {
     $results_array = array();
+    $results_array["items"] = array();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         extract($row);
         extract($counts->fetch(PDO::FETCH_ASSOC));
@@ -25,7 +26,7 @@ if ($num > 0) {
             "tax" => number_format($cart_price * 0.08, 2),
             "total" => number_format($cart_price + ($cart_price * 0.08), 2)
         );
-        array_push($results_array, $result_item);
+        array_push($results_array["items"], $result_item);
     }
     http_response_code(200);
     echo json_encode(results_array);
