@@ -8,6 +8,7 @@ var getCartItems = function() {
             var item = new Item(item_json);
             items.push(item);
         })
+        setCartContent(items);
     })
 }
 
