@@ -53,5 +53,5 @@ var setContent = function() {
 
     buildHTML += '</tbody>\n' +
         '</table>';
-    content.innerText = buildHTML;
+    content.innerHTML = buildHTML;
 };
