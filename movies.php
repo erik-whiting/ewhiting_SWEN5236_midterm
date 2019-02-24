@@ -29,6 +29,7 @@ ini_set('display_errors', 1);
 <script>
     window.onload = function() {
         getMovies();
+        setCart();
     }
 </script>
 </body>

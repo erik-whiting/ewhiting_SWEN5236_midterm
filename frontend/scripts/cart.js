@@ -4,7 +4,7 @@ var setCart = function() {
     $.get(url, function(data) {
         var navContent = data.receipt;
         var navbar = new Navbar(navContent);
-        setContent(navbar);
+        setCartHtml(navbar);
     })
 }
 
@@ -17,7 +17,7 @@ class Navbar {
     }
 }
 
-var setCart = function(navbar) {
+var setCartHtml = function(navbar) {
     var homeUrl = 'http://ewhiting.eastus.cloudapp.azure.com/midterm';
     var nav = document.getElementById("nav");
     var buildHTML = "<div class='container-fluid'>";
