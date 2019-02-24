@@ -29,7 +29,7 @@ if ($num > 0) {
         array_push($results_array["items"], $result_item);
     }
     http_response_code(200);
-    echo json_encode(results_array);
+    echo json_encode($results_array);
 } else {
     echo json_encode(array("message" => "This Cart is empty"));
 }
