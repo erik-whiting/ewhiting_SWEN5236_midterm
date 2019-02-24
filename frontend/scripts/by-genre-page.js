@@ -49,7 +49,7 @@ var setContent = function() {
         '  </thead>\n' +
         '  <tbody>';
 
-    movies.forEach(function(movies) {
+    movies.forEach(function(movie) {
         buildHTML += "<tr>";
         buildHTML += "<th scope='row'>" + movie.id + "</th>";
         buildHTML += "<td></td>";
@@ -59,7 +59,7 @@ var setContent = function() {
         buildHTML += "</tr>";
     });
 
-    buildHTML += '</tbody>\n' +
-        '</table>';
+    buildHTML += "</tbocy>" +
+        "</table>";
     content.innerHTML = buildHTML;
 };
