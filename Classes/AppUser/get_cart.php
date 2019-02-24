@@ -33,11 +33,19 @@ if ($stmt->fetch(PDO::FETCH_ASSOC)) {
     http_response_code(200);
     echo json_encode($results_array);
 } else {
+    $results_array["items"] = array();
+    $results_array["receipt"] = array();
     $result_item = array(
         "movie" => 0,
         "price" => 0,
     );
+    array_push($results_array["items"], $result_item);
     $price_array = array(
         "cart_count" => 0,
+        "tax" => 0,
+        "total" => 0
     );
+    array_push($results_array["receipt"], $price_array);
+    http_response_code(200);
+    echo json_encode($results_array);
 }
