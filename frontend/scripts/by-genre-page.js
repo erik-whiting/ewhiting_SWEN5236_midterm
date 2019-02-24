@@ -51,19 +51,18 @@ var setContent = function() {
 
     movies.forEach(function(movie) {
         buildHTML += "<tr>";
-        buildHTML += "<th scope='row'>" + movie.id + "</th>";
-        buildHTML += "<td></td>";
-        buildHTML += "<td></td>";
-        buildHTML += "<td></td>";
-        buildHTML += "<td></td>";
+        buildHTML += "<th scope='row'>" + movie.name + "<br />" + movie.description + "</th>";
+        buildHTML += "<td>Rating: " + movie.rating + " from " + movie.votes + " votes</td>";
+        buildHTML += "<td>Price: $" + movie.price + " <br />Grossed: " + movie.gross + "</td>";
+        buildHTML += "<td>Directed By: " + movie.director + "</td>";
         buildHTML += "</tr>";
     })
 
     buildHTML += "</tbocy>" +
         "</table>";
     content.innerHTML = buildHTML;
-};
+}
 
 var setRows = function() {
-    
+    var content = document.getElementById('content');
 }
