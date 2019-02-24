@@ -25,7 +25,7 @@ if ($num > 0) {
             );
             extract($counts->fetch(PDO::FETCH_ASSOC));
             $price_array = array("subtotal" => number_format($cart_price, 2),
-                "cart_count" => $cart_count,
+                "cart_count" => ($cart_count != null ? $cart_count : 0),
                 "tax" => number_format($cart_price * 0.08, 2),
                 "total" => number_format($cart_price + ($cart_price * 0.08), 2));
             array_push($results_array["receipt"], $price_array);
