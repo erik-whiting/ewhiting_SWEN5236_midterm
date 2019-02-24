@@ -22,14 +22,15 @@ $.get(url, function(data, status) {
 
 class Movie {
     constructor(build_object) {
-        this.id = build_object.id;
-        this.name = build_object.name;
-        this.description = build_object.description;
-        this.from = build_object.from;
-        this.to = build_object.to;
-        this.rating = build_object.rating;
-        this.director = build_object.director;
-        this.votes = build_object.votes;
-        this.gross = build_object.gross;
+        var bo = JSON.parse(build_object);
+        this.id = bo.id;
+        this.name = bo.name;
+        this.description = bo.description;
+        this.from = bo.from;
+        this.to = bo.to;
+        this.rating = bo.rating;
+        this.director = bo.director;
+        this.votes = bo.votes;
+        this.gross = bo.gross;
     }
 }
