@@ -33,9 +33,9 @@ if ($stmt) {
         "cart_count" => $cart_count,
         "tax" => number_format($cart_price * 0.08, 2),
         "total" => number_format($cart_price + ($cart_price * 0.08), 2));
-    $price_array["subtotal"] = 1;
-    $price_array["tax"] = 1;
-    $price_array["total"] = 1;
+    $price_array["subtotal"] *= $discount;
+    $price_array["tax"] *= $discount;
+    $price_array["total"] *= $discount;
     array_push($results_array["receipt"], $price_array);
     http_response_code(200);
     echo json_encode($results_array);
