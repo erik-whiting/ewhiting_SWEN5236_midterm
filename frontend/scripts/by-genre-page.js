@@ -10,7 +10,7 @@ function getUrlVars() {
 }
 
 var genre_id = getUrlVars()["genre"];
-url += 1;
+url += genre_id;
 
 $.get(url, function(data, status) {
     var records = data.movies;
@@ -62,8 +62,4 @@ var setContent = function() {
     buildHTML += "</tbocy>" +
         "</table>";
     content.innerHTML = buildHTML;
-}
-
-var setRows = function() {
-    var content = document.getElementById('content');
 }
