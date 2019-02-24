@@ -9,7 +9,7 @@ $user = new AppUser($db);
 $user_id = $_GET['user'];
 
 $stmt = $user->getCart($user_id);
-$num = $stmt->query("SELECT * FROM table")->fetchAll();
+$num = sizeof($stmt->fetch(PDO::FETCH_ASSOC));
 $counts = $user->getCountAndPrice($user_id);
 
 if ($num > 0) {
