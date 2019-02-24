@@ -61,4 +61,5 @@ var doCheckout = function() {
     }).done(function (msg) {
         getCartItems();
     });
+    location.reload();
 }
