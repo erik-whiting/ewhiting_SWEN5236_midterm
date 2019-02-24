@@ -30,6 +30,9 @@ ini_set('display_errors', 1);
 </div>
 <div id="content">
 </div>
+<div id="discount-content">
+
+</div>
 <script>
     window.onload = function() {
         setCart();

@@ -48,10 +48,30 @@ var setReceipt = function(receipt) {
     receiptHtml += "<div class='cart-tax'>Tax: +$" + receipt.tax + "</div>";
     receiptHtml += "<div class='cart-total'><b>Grand Total: $" + receipt.total + "</b></div>";
     receiptHtml += "</div>";
+    if(receipt.savings != null) {
+        receiptHtml += "<div class='cart-savings'><b>Savings: $" + receipt.savings + "</b></div>";
+    }
     receiptHtml += "<button onclick='doCheckout()' type='button' class='btn btn-primary'>Checkout!</button>";
     var content = document.getElementById("content");
     content.innerHTML += receiptHtml;
 
+}
+
+var setDiscountReceipt = function() {
+    var url = "http://ewhiting.eastus.cloudapp.azure.com/midterm/Classes/AppUser/get_cart_discount.php/";
+    var params = "?user=1&discount=15";
+    var url = url + params;
+    $.get(url, function(data) {
+        var receipt_json = new Receipt(data.receipt[0]);
+        receipt.push(receipt_json);
+        var items_json = data.items;
+        items_json.forEach(function (item_json) {
+            var item = new Item(item_json);
+            items.push(item);
+        });
+        setCartContent(items);
+        setReceipt(receipt[0]);
+    })
 }
 
 var doCheckout = function() {
