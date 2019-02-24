@@ -32,7 +32,10 @@ class AppUser
             SELECT m.name AS 'movie_name', m.price AS 'movie_price' FROM movie_cart mc
             INNER JOIN Movie m
             ON mc.movie_id = m.id
-            WHERE cart_id = " . $user_id;
+            INNER JOIN Cart c
+            ON mc.cart_id = c.id
+            WHERE cart_id = " . $user_id . "
+            AND c.active = 1";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
 
