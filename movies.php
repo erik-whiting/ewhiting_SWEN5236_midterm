@@ -1,3 +1,4 @@
+<?php include_once('./frontend/by-genre-page.js'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
