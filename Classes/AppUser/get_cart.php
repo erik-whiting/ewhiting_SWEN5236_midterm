@@ -33,5 +33,17 @@ if ($num > 0) {
     http_response_code(200);
     echo json_encode($results_array);
 } else {
-    echo json_encode(array("message" => "This Cart is empty"));
+    $result_item = array(
+        "movie" => 0,
+        "price" => 0,
+    );
+    $price_array = array(
+        "cart_count" => 0,
+        "tax" => 0,
+        "total" => 0
+    );
+    array_push($results_array["items"], $results_array);
+    array_push($results_array["receipt"], $price_array);
+    http_response_code(200);
+    echo json_encode($results_array);
 }
