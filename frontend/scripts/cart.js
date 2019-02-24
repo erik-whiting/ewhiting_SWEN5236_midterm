@@ -16,7 +16,7 @@ class Navbar {
 var setContent = function(navbar) {
     var nav = document.getElementById("nav");
     var buildHTML = "<div class='container-fluid'>";
-    buildHTML += "<div class='navbar-header'>Erik's SWEN 5236 Midterm</div>";
+    buildHTML += "<div class='navbar-header'><a class=\"navbar-brand\" href=\"#\">Erik's SWEN 5236 Midterm</a></div>";
     buildHTML += "<ul class='nav navbar-nav'><li>Cart: " + navbar.cart_count + "</li></ul>";
     buildHTML += "</div>";
     nav.innerHTML = buildHTML;
