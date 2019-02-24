@@ -51,8 +51,8 @@ var setContent = function() {
 
     movies.forEach(function(movie) {
         buildHTML += "<tr>";
-        buildHTML += "<th scope='row'>" + movie.name + "<br />" + movie.description + "</th>";
-        buildHTML += "<td>Rating: " + movie.rating + " from " + movie.votes + " votes</td>";
+        buildHTML += "<th scope='row'>" + movie.name + "</th>";
+        buildHTML += "<td>" + movie.description + "<br />Rating: " + movie.rating + " from " + movie.votes + " votes</td>";
         buildHTML += "<td>Price: $" + movie.price + " <br />Grossed: " + movie.gross + "</td>";
         buildHTML += "<td>Directed By: " + movie.director + "</td>";
         buildHTML += "</tr>";
