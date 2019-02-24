@@ -52,7 +52,9 @@ class AppUser
             ON mc.movie_id = m.id
             INNER JOIN Cart c
             ON mc.cart_id = c.id
-            WHERE cart_id = " . $user_id . "
+            WHERE cart_id = " .
+            "(SELECT id FROM Cart WHERE user_id = " . $user_id . ")"
+            . "
             AND c.active = 1";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
