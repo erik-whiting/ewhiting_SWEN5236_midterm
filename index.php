@@ -120,6 +120,6 @@ ini_set('display_errors', 1);
         </div>
     </div>
 </div><br><br>
-
+<script>window.onload = function() { setCart(); }</script>
 </body>
 </html>
