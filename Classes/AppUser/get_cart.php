@@ -13,28 +13,25 @@ $num = $stmt->rowcount();
 $counts = $user->getCountAndPrice($user_id);
 
 if ($stmt) {
+    $results_array = array();
+    $results_array["items"] = array();
+    $results_array["receipt"] = array();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $results_array = array();
-        $results_array["items"] = array();
-        $results_array["receipt"] = array();
-        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            extract($row);
-            $result_item = array(
-                "movie" => $movie_name,
-                "price" => $movie_price
-            );
-            array_push($results_array["items"], $result_item);
-        }
-        extract($counts->fetch(PDO::FETCH_ASSOC));
-        $price_array = array("subtotal" => number_format($cart_price, 2),
-            "cart_count" => $cart_count,
-            "tax" => number_format($cart_price * 0.08, 2),
-            "total" => number_format($cart_price + ($cart_price * 0.08), 2));
-        array_push($results_array["receipt"], $price_array);
-        http_response_code(200);
-        echo json_encode($results_array);
+        extract($row);
+        $result_item = array(
+            "movie" => $movie_name,
+            "price" => $movie_price
+        );
+        array_push($results_array["items"], $result_item);
     }
-
+    extract($counts->fetch(PDO::FETCH_ASSOC));
+    $price_array = array("subtotal" => number_format($cart_price, 2),
+        "cart_count" => $cart_count,
+        "tax" => number_format($cart_price * 0.08, 2),
+        "total" => number_format($cart_price + ($cart_price * 0.08), 2));
+    array_push($results_array["receipt"], $price_array);
+    http_response_code(200);
+    echo json_encode($results_array);
 } else {
     $results_array["items"] = array();
     $results_array["receipt"] = array();
