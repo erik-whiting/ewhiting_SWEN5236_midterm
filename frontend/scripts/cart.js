@@ -8,6 +8,7 @@ $.get(url, function(data) {
 
 class Navbar {
     constructor(receipt) {
+	receipt = receipt[0];
         this.total = receipt.total;
         this.cart_count = receipt.cart_count;
     }
@@ -18,7 +19,7 @@ var setContent = function(navbar) {
     var buildHTML = "<div class='container-fluid'>";
     buildHTML += "<div class='navbar-header'><a class=\"navbar-brand\" href=\"#\">Erik's SWEN 5236 Midterm</a></div>";
     buildHTML += "<ul class='nav navbar-nav'>" +
-        "<li class='active'><a href='#'>Cart: " + navbar.cart_count + "</a></li></ul>";
+        "<li class='active'><a href='#'>Your Cart: " + navbar.cart_count + "</a></li></ul>";
     buildHTML += "</div>";
     nav.innerHTML = buildHTML;
 }
