@@ -48,8 +48,18 @@ var setReceipt = function(receipt) {
     receiptHtml += "<div class='cart-tax'>Tax: +$" + receipt.tax + "</div>";
     receiptHtml += "<div class='cart-total'><b>Grand Total: $" + receipt.total + "</b></div>";
     receiptHtml += "</div>";
-    receiptHtml += "<button type='button' class='btn btn-primary'>Checkout!</button>";
+    receiptHtml += "<button id='checkoutBtn' type='button' class='btn btn-primary'>Checkout!</button>";
     var content = document.getElementById("content");
     content.innerHTML += receiptHtml;
 
 }
+
+$('#checkoutButton').click(function() {
+    $.ajax({
+        type: "GET",
+        url: "http://ewhiting.eastus.cloudapp.azure.com/midterm/Classes/Cart/checkout.php/?user=1"
+    }).done(function(msg) {
+        getCartItems();
+    });
+});
+
