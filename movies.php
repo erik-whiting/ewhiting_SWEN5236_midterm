@@ -13,9 +13,11 @@ ini_set('display_errors', 1);
 
     <link rel="stylesheet" href="../frontend/css/style.css">
     <script type="text/javascript" src="../frontend/scripts/by-genre-page.js"></script>
+    <script type="text/javascript" src="../frontend/scripts/cart.js"></script>
 
 </head>
 <body>
+<nav id="nav" class="navbar navbar-inverse"></nav>
 <div class="jumbotron">
     <div class="container text-center">
         <h1>Browse Popular Movies</h1>
