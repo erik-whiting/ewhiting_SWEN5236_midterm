@@ -43,7 +43,7 @@ if ($num > 0) {
     array_push($results_array["items"], $results_array);
     $price_array = array(
         "cart_count" => 0,
-        "tax" => $num,
+        "tax" => $num + 1,
         "total" => 0
     );
     array_push($results_array["receipt"], $price_array);
