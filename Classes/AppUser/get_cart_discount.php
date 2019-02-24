@@ -29,12 +29,15 @@ if ($stmt) {
     }
     extract($counts->fetch(PDO::FETCH_ASSOC));
     $price_array = array(
-        "subtotal" => number_format(($cart_price * $discount), 2),
+        "subtotal" => number_format($cart_price, 2),
         "cart_count" => $cart_count,
-        "tax" => number_format(($discount * ($cart_price * 0.08)), 2),
-        "total" => number_format( ($discount * ($cart_price + ($cart_price * 0.08))), 2),
-        "savings" => number_format(($cart_price + ($cart_price * 0.08))) -
-            ($discount * ($cart_price + ($cart_price * 0.08))), 2);
+        "tax" => number_format($cart_price * 0.08, 2),
+        "total" => number_format($cart_price + ($cart_price * 0.08), 2));
+    $price_array["subtotal"] = number_format($price_array["subtotal"] * $discount, 2);
+    $price_array["tax"] = number_format($price_array["tax"] * $discount, 2);
+    $price_array["savings"] = number_format(($price_array["total"] -
+        ($price_array["total"] * $discount)), 2);
+    $price_array["total"] = number_format($price_array["total"] * $discount, 2);
     array_push($results_array["receipt"], $price_array);
     http_response_code(200);
     echo json_encode($results_array);
