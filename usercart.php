@@ -13,6 +13,7 @@ ini_set('display_errors', 1);
 
     <script src="frontend/scripts/cart.js"></script>
     <script src="frontend/scripts/cart-page.js"></script>
+    <link rel="stylesheet" href="frontend/css/style.css">
 
 </head>
 
@@ -30,6 +31,7 @@ ini_set('display_errors', 1);
 <script>
     window.onload = function() {
         setCart();
+        getCartItems();
     }
 </script>
 </body>
