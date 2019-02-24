@@ -8,7 +8,7 @@ $db = $database->getConnection();
 $user = new AppUser($db);
 $user_id = $_GET['user'];
 $discount_pct = $_GET['discount'];
-$discount_pct = number_format($discount_pct * 0.01, 2);
+$discount_pct = number_format($discount_pct * 0.01, 4);
 $discount = number_format(1 - $discount_pct);
 
 $stmt = $user->getCart($user_id);
@@ -28,7 +28,8 @@ if ($stmt) {
         array_push($results_array["items"], $result_item);
     }
     extract($counts->fetch(PDO::FETCH_ASSOC));
-    $price_array = array("subtotal" => number_format($cart_price * $discount, 2),
+    $price_array = array(
+        "subtotal" => number_format($cart_price * $discount, 2),
         "cart_count" => $cart_count,
         "tax" => number_format($discount * ($cart_price * 0.08), 2),
         "total" => number_format( $discount * ($cart_price + ($cart_price * 0.08)), 2),
