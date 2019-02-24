@@ -13,6 +13,7 @@ ini_set('display_errors', 1);
 
     <link rel="stylesheet" href="frontend/css/style.css">
     <script src="frontend/scripts/genre-page.js"></script>
+    <script src="frontend/scripts/cart.js"></script>
 
 </head>
 <body>
