@@ -57,9 +57,13 @@ var setContent = function() {
         buildHTML += "<td></td>";
         buildHTML += "<td></td>";
         buildHTML += "</tr>";
-    });
+    })
 
     buildHTML += "</tbocy>" +
         "</table>";
     content.innerHTML = buildHTML;
 };
+
+var setRows = function() {
+    
+}
