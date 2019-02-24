@@ -24,12 +24,13 @@ class Item {
 
 class Receipt {
     constructor(receipt) {
-        this.subtotal = receipt.subtotal.toFixed(2);
+        this.subtotal = receipt.subtotal;
         this.cart_count = receipt.cart_count;
-        this.tax = receipt.tax.toFixed(2);
-        this.total = receipt.total.toFixed(2);
+        this.tax = receipt.tax;
+        this.total = receipt.total;
         if (receipt.savings != null) {
-            this.savings = receipt.savings.toFixed(2);
+            this.savings = receipt.savings;
+            this.savings = this.savings.toFixed(2);
         }
     }
 }
