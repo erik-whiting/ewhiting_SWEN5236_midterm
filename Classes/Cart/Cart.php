@@ -39,7 +39,9 @@ class Cart
 
     function add_to_cart($movie_id, $user_id) {
         $query = "INSERT INTO movie_cart (movie_id, cart_id) VALUES" .
-            "(" . $movie_id . ", " . $user_id . ")";
+            "(" . $movie_id . ", " .
+            "(SELECT id FROM Cart WHERE user_id = " . $user_id . " AND active = 1)"
+            . ")";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
     }
