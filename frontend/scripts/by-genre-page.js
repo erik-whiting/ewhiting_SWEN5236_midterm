@@ -41,10 +41,10 @@ var setContent = function() {
     var buildHTML = '<table class="table table-bordered">\n' +
         '  <thead>\n' +
         '    <tr>\n' +
-        '      <th scope="col">#</th>\n' +
-        '      <th scope="col">First</th>\n' +
-        '      <th scope="col">Last</th>\n' +
-        '      <th scope="col">Handle</th>\n' +
+        '      <th scope="col">Movie</th>\n' +
+        '      <th scope="col">Rating</th>\n' +
+        '      <th scope="col">Price</th>\n' +
+        '      <th scope="col">Other Info</th>\n' +
         '    </tr>\n' +
         '  </thead>\n' +
         '  <tbody>';
