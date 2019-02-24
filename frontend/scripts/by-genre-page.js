@@ -56,7 +56,8 @@ var setContent = function() {
             "<br /><img id=\"Action-img\" src=\"https://placehold.it/150x80?text=IMAGE\" " +
             "class=\"img-responsive\" style=\"width:100%\" alt=\"Image\">" + "</th>";
         buildHTML += "<td>" + movie.description + "<br />Rating: " +
-            movie.rating + " from " + movie.votes + " votes</td>";
+            movie.rating + " from " + movie.votes + " votes<br />" +
+            "<button type=\"button\" class=\"btn btn-primary\">Add to Cart!</button></td>";
         buildHTML += "<td>Price: $" + movie.price + " <br />Grossed: " + movie.gross + "</td>";
         buildHTML += "<td>Directed By: " + movie.director + "</td>";
         buildHTML += "</tr>";
