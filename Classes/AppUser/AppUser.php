@@ -49,7 +49,7 @@ class AppUser
             ON mc.movie_id = m.id
             WHERE cart_id = @user_cart";
         $stmt = $this->conn.prepare($query);
-        $stmt->exectute();
+        $stmt->execute();
 
         return $stmt;
     }
