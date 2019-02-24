@@ -11,6 +11,7 @@ var getCartItems = function() {
             items.push(item);
         });
         setCartContent(items);
+        setReceipt(receipt);
     })
 }
 
@@ -39,4 +40,15 @@ var setCartContent = function(items) {
         buildHTML += "</div>";
     })
     content.innerHTML = buildHTML;
+}
+
+var setReceipt = function(receipt) {
+    var receiptHtml = "<div class='cart-receipt'>";
+    receiptHtml += "<div class='cart-subtotal'>Subtotal: $" + receipt.subtotal + "</div>";
+    receiptHtml += "<div class='cart-tax'>Tax: +$" + receipt.tax + "</div>";
+    receiptHtml += "<div class='cart-total'><b>Grand Total: $" + receipt.total + "</b></div>";
+    receiptHtml += "</div>";
+    var content = document.getElementById("content");
+    content.innerHTML += receiptHtml;
+
 }
