@@ -33,6 +33,9 @@ if ($num > 0) {
     http_response_code(200);
     echo json_encode($results_array);
 } else {
+    $results_array = array();
+    $results_array["items"] = array();
+    $results_array["receipt"] = array();
     $result_item = array(
         "movie" => 0,
         "price" => 0,
