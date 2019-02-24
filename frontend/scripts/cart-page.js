@@ -74,7 +74,7 @@ var setDiscountReceipt = function() {
             items.push(item);
         });
         setCartContent(items);
-        setReceipt(receipt[0]);
+        setReceipt(receipt[1]);
     })
 }
 
