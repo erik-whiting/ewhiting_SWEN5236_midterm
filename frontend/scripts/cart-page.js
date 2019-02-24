@@ -52,6 +52,8 @@ var setReceipt = function(receipt) {
         receiptHtml += "<div class='cart-savings'><b>Savings: $" + receipt.savings + "</b></div>";
     }
     receiptHtml += "<button onclick='doCheckout()' type='button' class='btn btn-primary'>Checkout!</button>";
+    receiptHtml += "<button onclick='setDiscountReceipt()' type='button' class='btn btn-btn-warning'>" +
+        "Get 15 Percent Discount!</button>;"
     var content = document.getElementById("content");
     content.innerHTML += receiptHtml;
 
