@@ -35,6 +35,7 @@ if ($stmt) {
         "total" => number_format($cart_price + ($cart_price * 0.08), 2));
     $price_array["subtotal"] *= $discount;
     $price_array["tax"] *= $discount;
+    $price_array["savings"] = $price_array["total"] - ($price_array["total"] * $discount);
     $price_array["total"] *= $discount;
     array_push($results_array["receipt"], $price_array);
     http_response_code(200);
