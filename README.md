@@ -23,3 +23,6 @@ This project is written in PHP and JavaScript.  The only framework used is Boots
 for the CSS.  Each entity is programmed into a class with functions for executing 
 common functions.  Most everything in the backend is implemented as a REST service 
 and consumed using AJAX on the front end.
+
+The website is running on an Ubuntu Linux Server on Microsoft Azure.  The database 
+is MySQL and the web server is Apache.
