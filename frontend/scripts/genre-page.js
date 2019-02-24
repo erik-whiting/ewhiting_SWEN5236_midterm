@@ -6,7 +6,7 @@ $.get(url, function(data, status) {
     records.forEach(function(record, i) {
         var genre = new Genre(record);
         genres.push(record);
-        var genre_url = genre_service_url + genre.id;
+        var genre_url = 'http://ewhiting.eastus.cloudapp.azure.com/midterm/movies.php/?genre=' + genre.id;
         document.getElementById(genre.name).innerText = genre.name;
         var link_id = genre.name + '-link';
         document.getElementById(link_id).setAttribute('href', genre_url);
