@@ -3,10 +3,10 @@ var receipt = Array();
 var getCartItems = function() {
     var url = "http://ewhiting.eastus.cloudapp.azure.com/midterm/Classes/AppUser/get_cart.php/?user=1";
     $.get(url, function(data) {
-        var receipt_json = new Receipt(data.receipt);
+        var receipt_json = new Receipt(data.receipt[0]);
         receipt.push(receipt_json);
-        var items = data.items;
-        items.forEach(function (item_json) {
+        var items_json = data.items;
+        items_json.forEach(function (item_json) {
             var item = new Item(item_json);
             items.push(item);
         });
