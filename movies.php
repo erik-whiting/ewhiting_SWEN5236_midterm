@@ -9,7 +9,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="frontend/css/style.css">
-    <script src="frontend/scripts/by-genre-page.js"></script>
+<!--    <script src="frontend/scripts/by-genre-page.js"></script>-->
 
 </head>
 <body>
